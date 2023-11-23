@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Product Sans";
+    src: local("Product Sans"),
+        url("fonts/ProductSansRegular.ttf") format("TrueType")
+}
+@font-face {
+    font-family: "Product SansB";
+    src: local("Product Sans"),
+        url("fonts/ProductSansBold.ttf") format("TrueType")
+}
+@font-face {
+    font-family: "Product SansI";
+    src: local("Product Sans"),
+        url("fonts/ProductSansItalic.ttf") format("TrueType")
+}
+body {background-color: black;}
+.top-menu-bar {
+    height: 150px; 
+    border-radius: 10px;
+}
+.top-main-text {
+    font-family: Product SansB; 
+    text-align: center; 
+    color: white;
+}
+.top-division {
+    font-family: Product SansB;
+}
+.left-main-text {
+    font-family: Product Sans; 
+    text-align: left; 
+    color: white;
+}
+.login-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-button {
+    position: relative;
+    font-family: Product Sans;
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+.register-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-button {
+    position: relative;
+    font-family: Product Sans;
+    background-color: lightblue;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+.login-text {
+    font-family: Product Sans;
+    color: white;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+}
+.content-depot {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    max-width: 1920px;
+    max-height: 1080px;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.main-content {
+    position: fixed;
+}
+.introduction-text {
+    font-family: Product SansI;
+    color: white;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+}
+.introduction-text2 {
+    font-family: Product SansI;
+    color: white;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+}
+.top-division2 {
+    font-family: Product SansB;
+    background-color: white;
+    z-index: 9999;
+    position: relative;
+}

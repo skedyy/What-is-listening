@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/index.css">
+    <title>What´s listening?</title>
+</head>
+
+<body>
+    <div class="top-menu-bar">
+            <div class="top-section">
+                <img class="return-button" src="../assets/img/return.png" alt="Return Button" width="20" height="40"onclick="returnw()">
+                <h2 class="top-main-text">What´s listening your friends?</h2>
+        </div>
+        <h4 class="left-main-text"> Plataformas Soportadas</h4>
+        <img class="spotify-logo" src="assets/img/spotifylogo.png" alt="Spotify Logo" width="30" height="30">
+        <hr class="top-division">
+    </div>
+    <div class="content-depot"> <img src="assets/img/background_galaxy.jpg" alt="Space background"></div>
+    <h1 class="user-select-text">Registrate!</h1>
+    <br><br>
+    <h3 class="user-select-text">Nombre de usuario</h3>
+    <br>
+    <div class="register-form">
+        <div>
+        <input type="text" class="user-select-input" id="user-text-input" autocomplete="false" name="usuario">
+        <h3 class="user-select-text">Email</h3>
+        <input type="text" class="user-select-input" id="email-text-input" autocomplete="false" name="email">
+        <br>
+        <h3 class="pass-select-text">Contraseña</h3>
+        <input type="password" class="pass-select-input" id="pass-text-input" autocomplete="false" name="password">
+        <br><br>
+        <div class="login-button-container">
+            <button class="login-button" type="submit" onclick="register()">Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br><br>
+    <div class="null-user-container">
+        <h1 class="null-user-text" id="null-user-text" hidden></h1>
+    </div>
+    <script src="register.js"></script>
+</body>
+
+</html>
