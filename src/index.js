@@ -1,5 +1,7 @@
 const { app, BrowserWindow, ipcMain, protocol } = require('electron')
 const path = require('path')
+const Store = require('electron-store')
+const files = new Store()
 let mainWindow
 require('electron-reload')(__dirname)
 const gotTheLock = app.requestSingleInstanceLock()
@@ -45,4 +47,11 @@ app.on('ready', () => {
     }
     })
 mainWindow.loadURL(path.join(__dirname, "index.html"))
+//IPC METHODS
+ipcMain.on('savedata', (type, data) => {
+  files.set(type,data);
+})
+ipcMain.on('getdata', (type, data) => {
+  files.set(type,data);
+})
 })

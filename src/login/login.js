@@ -44,7 +44,7 @@ function validatelogin(){
       var sessiondate = logindate+btoa(mm)+"/"
       var sessiondate = logindate+btoa(yyyy)+"/"
       var sessionkey = sessiondate+btoa(user+"/"+pass)
-      localStorage.setItem('sessionkey',sessionkey)
+      window.app.savedata('sessionkey',sessionkey)
     }
     else{
       var error = document.getElementById('null-user-text')

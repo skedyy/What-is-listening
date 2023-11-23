@@ -1,11 +1,13 @@
 var sessionkey = localStorage.getItem('sessionkey')
+console.log(sessionkey)
 sessionkey = atob(sessionkey)
 sessionkey.split('/')
 var currentdate = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+    var dd = String(currentdate.getDate()).padStart(2, '0');
+    var mm = String(currentdate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = currentdate.getFullYear();
     logindate = dd + '-' + mm + '-' + yyyy;
+console.log(sessionkey)
 if(sessionkey==null){
     
 }
