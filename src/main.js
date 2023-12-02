@@ -1,22 +1,35 @@
-var sessionkey = localStorage.getItem('sessionkey')
-console.log(sessionkey)
-sessionkey = atob(sessionkey)
-sessionkey.split('/')
-var currentdate = new Date();
-    var dd = String(currentdate.getDate()).padStart(2, '0');
-    var mm = String(currentdate.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = currentdate.getFullYear();
-    logindate = dd + '-' + mm + '-' + yyyy;
-console.log(sessionkey)
-if(sessionkey==null){
-    
+var sessionkey = null;
+var sessionkeys = []
+window.app.getdat("sessionkey")
+window.app.getdata((event, value) => {
+    sessionkey = value['sessionkey']
+    sessionkey = sessionkey.split('/')
+    console.log(sessionkey)
+    for(i = 0; i < sessionkey.length; i++)
+{
+    sessionkeys[i] = atob(sessionkey[i])
 }
-if(sessionkey[0]){
-    
+var failedchecks
+for(i = 0; i < sessionkeys.length; i++)
+{
+    if(!failedchecks <=5){
+        if(sessionkeys[i] == null){
+            failedchecks++
+        }
+        else{
+            window.location.href = "app/index.html"
+        }   
+    }else{
+        login()    
+    }
 }
+})
 function login(){
     window.location.href = "login/login.html"
 }
 function register(){
     window.location.href = "register/index.html"
+}
+function index(){
+    window.location.href = ""
 }
