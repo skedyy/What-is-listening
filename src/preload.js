@@ -6,6 +6,6 @@ contextBridge.exposeInMainWorld(
         savedata: (name,data) => ipcRenderer.send('savedata',name,data),
         getdata: (callback) => ipcRenderer.on('getdata',callback),
         getdat: (type) => ipcRenderer.send('getdat'),
-        removedata: () => ipcRenderer.send('removedata',data)
+        removedata: (data) => ipcRenderer.send('removedata',data)
     }
 )

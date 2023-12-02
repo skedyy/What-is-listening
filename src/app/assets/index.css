@@ -14,6 +14,22 @@
         url("fonts/ProductSansItalic.ttf") format("TrueType")
 }
 body {background-color: black;}
+.spotify-logo{
+    padding-right: 93%;
+    position: relative;
+    text-align: right;
+    z-index: 9999;
+}
+.return-button{
+    position: relative;
+    float: left;
+    z-index: 9999;
+}
+.close-button{
+    position: relative;
+    float: right;
+    z-index: 9999;
+}
 .top-menu-bar {
     height: 150px; 
     border-radius: 10px;
@@ -21,6 +37,12 @@ body {background-color: black;}
 .top-main-text {
     font-family: Product SansB; 
     text-align: center; 
+    color: white;
+
+}
+.top-section {
+    font-family: Product SansB;
+    position: relative;
     color: white;
 }
 .top-division {

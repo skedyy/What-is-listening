@@ -22,7 +22,7 @@ if (!gotTheLock) {
         if(url == "home"){
         var deepurl = deeplinkingUrl.pop()
         deeplinkingUrl = deepurl.slice(23)
-        mainWindow.loadURL(path.join(__dirname, 'app/login.html?'+deeplinkingUrl))
+        mainWindow.loadURL(path.join(__dirname, 'app/index.html?'+deeplinkingUrl))
         }
         else{
 
