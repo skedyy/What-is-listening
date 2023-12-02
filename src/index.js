@@ -50,8 +50,7 @@ mainWindow.loadURL(path.join(__dirname, "index.html"))
 console.log(files.get('sessionkey'))
 //IPC METHODS
 ipcMain.on('removedata', (event,data) => {
-  var datos = files.get(type)
-  sendData(datos)
+  var datos = files.delete(data)
 })
 ipcMain.on('savedata', (event, name, data) => {
   console.log(name)
