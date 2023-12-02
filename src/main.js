@@ -10,14 +10,25 @@ window.app.getdata((event, value) => {
     sessionkeys[i] = atob(sessionkey[i])
 }
 var failedchecks
+var currentdate = new Date();
+      var dd = String(logindate.getDate()).padStart(2, '0');
+      var mm = String(logindate.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = String(logindate.getFullYear()).padStart(2, '0');
 for(i = 0; i < sessionkeys.length; i++)
 {
     if(!failedchecks <=5){
-        if(sessionkeys[i] == null){
+        if(!sessionkeys[i] == null){
             failedchecks++
+            if(sessionkeys[0]==dd){
+                if(sessionkeys[1]==mm){
+                    if(sessionkeys[2]==yyyy){
+                        window.location.href = "app/index.html"
+                    }
+                }
+            }
         }
         else{
-            window.location.href = "app/index.html"
+        
         }   
     }else{
         login()    
