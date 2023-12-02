@@ -1,7 +1,9 @@
 var response = null;
+var user = null;
+var pass = null
 function login(){
-    var user = document.getElementById('user-text-input').value;
-    var pass = document.getElementById('pass-text-input').value;
+  user = document.getElementById('user-text-input').value;
+  pass = document.getElementById('pass-text-input').value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -35,15 +37,16 @@ function validatelogin(){
         redirect_uri: redirect_uri,
         state: state
       })
-      localStorage.removeItem('sessionkey')
       var logindate = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
-      logindate = btoa(dd)+"/";
-      var sessiondate = logindate+btoa(mm)+"/"
-      var sessiondate = logindate+btoa(yyyy)+"/"
-      var sessionkey = sessiondate+btoa(user+"/"+pass)
+      var dd = String(logindate.getDate()).padStart(2, '0');
+      var mm = String(logindate.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = String(logindate.getFullYear()).padStart(2, '0');
+      var sessionday = btoa(dd)+"/";
+      var sessionmonth = btoa(mm)+"/"
+      var sessionyear = btoa(yyyy)+"/"
+      var randomid = generateRandomString(5);
+      var sessionkey = sessionday+sessionmonth+sessionyear+randomid
+      window.app.removedata('sessionkey')
       window.app.savedata('sessionkey',sessionkey)
     }
     else{
