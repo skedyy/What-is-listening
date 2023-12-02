@@ -47,11 +47,18 @@ app.on('ready', () => {
     }
     })
 mainWindow.loadURL(path.join(__dirname, "index.html"))
+console.log(files.get('sessionkey'))
 //IPC METHODS
-ipcMain.on('savedata', (type, data) => {
-  files.set(type,data);
+ipcMain.on('savedata', (event, name, data) => {
+  console.log(name)
+  console.log(data)
+  files.set(name,data);
 })
-ipcMain.on('getdata', (type, data) => {
-  files.set(type,data);
+ipcMain.on('getdat', (type) => {
+  var datos = files.get(type)
+  sendData(datos)
 })
+function sendData(datos){
+  mainWindow.webContents.send('getdata',datos);
+}
 })
