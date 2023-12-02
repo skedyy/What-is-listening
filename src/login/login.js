@@ -44,7 +44,7 @@ function validatelogin(){
       var sessionday = btoa(dd)+"/";
       var sessionmonth = btoa(mm)+"/"
       var sessionyear = btoa(yyyy)+"/"
-      var randomid = generateRandomString(5);
+      var randomid = btoa(generateRandomString(5));
       var sessionkey = sessionday+sessionmonth+sessionyear+randomid
       window.app.removedata('sessionkey')
       window.app.savedata('sessionkey',sessionkey)
